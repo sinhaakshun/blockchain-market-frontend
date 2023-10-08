@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="filter-container">
+        <h2>Your Orders</h2><br/><br/>
+        <input [(ngModel)]="filterUserAddress" placeholder="User Address" class="custom-input" />
+        <div class="date-range-input">
+            <input [(ngModel)]="filterFromDate" placeholder="From Date : YYYY-MM-DD" class="custom-input" >
+            <input [(ngModel)]="filterToDate" placeholder="To Date : YYYY-MM-DD" class="custom-input">
+          </div>
+        <input [(ngModel)]="filterProductId" placeholder="Product ID" class="custom-input" />
+        <button (click)="applyFilters()" class="custom-button">Apply Filters</button>
+      </div>
+         
+    <div class="product-cards">
+        <div *ngFor="let item of Orders" class="product-card">
+          <!-- <h3 class="product-name">{{ item.name }}</h3> -->
+          <p class="product-address">Address: {{ item.userAddress }}</p>
+          <!-- <p class="product-price">Price: {{item.price}} ETH</p> -->
+          <p class="product-time">Time: {{ item.timestamp }}</p>
+        </div>
+      </div>
+  </div>
